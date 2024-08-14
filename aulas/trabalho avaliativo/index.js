@@ -21,6 +21,8 @@ acabamos indo no google ou indo no arquivo do drive e tambem pesquisando no yout
 
 nosso algoritmo falhou 3 vezes, mas na ultiam tentativa funcionou.
 
+Nome: Luis Henrique, Ingrid Barretto
+
 */
 let celsius
 let fahrenheit
