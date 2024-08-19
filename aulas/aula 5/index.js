@@ -77,14 +77,27 @@ as variaveis 'nome' e 'idade' foram declaradas, mas não foram inicializados com
 
  //Perguntas
 
- 
+ //let roupaAzul = Sim
+//let calcadoPreto = sim
+//let boneCinza = não
+//console.log(voce esta usando uma roupa azul hoje?, roupaAzul)
+//console.log( voce esta usando  calçado preto hoje?, calcadoPreto)
+//console.log(voce esta usando  bone cinza hoje?, boneCinza)
 
 
-   
 
 
 
 
+//let c = a
+  // a = b
+ //  b = c
+
+//let numero 1 = prompt ("digite o numero 1")
+//let numero 2 = prompt ("digite o numero 2")
+
+//let x = numero 1 + numero 2
+//let y = numero 1 + numero 2
 
 
 
