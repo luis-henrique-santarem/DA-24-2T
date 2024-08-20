@@ -151,7 +151,7 @@ console.log(condicao3)// resultado true
 const condicao4 = 3 < 2
 console.log(condicao4)// resultado false
 */
-
+/*
  const numero1 = 10 
  const numero2 = 5
 
@@ -160,7 +160,21 @@ console.log(" o primeiro numero e diferente do segundo?", numero1 !== numero2) /
 console.log("o primeiro numero e maior que o segundo?", numero1 > numero2) // true
 console.log("o primeiro numero e menor que o segundo?", numero1 < numero2) // false
 
+*/
 
+/*
+let resultado = 100
+
+resultado = resultado + 10
+
+console.log(resultado)
+
+let resultado1 = 100
+resultado1 = 10
+
+console.log(resultado1)
+
+*/
 
 
 
