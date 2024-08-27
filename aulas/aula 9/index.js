@@ -99,19 +99,22 @@ console.log(comidasPreferidas)[4]
 
 const pergunta = prompt("qual sua comida preferida")
 
-console.log(comidasPreferidas)[1] = pergunta
+(comidasPreferidas)[1] = pergunta console.log(comidaPreferidas)
 
 */
-
+/*
 listaDeTarefas = []
 
-pergunta1 = prompt("insira uma tarefa que não cumpriu")
-pergunta2 = prompt("insira uma segunda tarefa que nao cumpriu")
-pergunta3 = prompt("insira uma terceira tarefa que não cumpriu")
+pergunta1 = prompt("insira uma tarefa que não fez")
+pergunta2 = prompt("insira uma segunda tarefa que nao fez")
+pergunta3 = prompt("insira uma terceira tarefa que não fez")
 
 listaDeTarefas.push(pergunta1,pergunta2,pergunta3);
 
 console.log(listaDeTarefas);
-let tarefaRealizada = prompt("insira o indice da tarefa que voçe ja realizou?")
+let tarefaRealizada = Number(prompt("insira o indice da tarefa que voçe ja realizou?"))
 listaDeTarefas.splice(tarefaRealizada,1)
 console.log(listaDeTarefas);
+*/
+
+// desafio
