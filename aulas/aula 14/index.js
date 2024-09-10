@@ -156,6 +156,7 @@ jogoDaForca();
 
 //Validador de CPF:
 
+let cpf = Number(prompt("insira seu cpf"))
 
 
 
