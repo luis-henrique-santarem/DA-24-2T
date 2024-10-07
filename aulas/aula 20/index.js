@@ -119,45 +119,91 @@ console.log("Soma dos elementos da matriz:", resultado);
 
 
 let tabuleiro = [
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0]
-]
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+];
 
-function setarNavios(){
-    tabuleiro[5][6] = 1
-    tabuleiro[5][7] = 1
-    tabuleiro[1][3] = 1
-    tabuleiro[1][4] = 1
-    tabuleiro[1][5] = 1
-    tabuleiro[2][0] = 1
-    tabuleiro[2][1] = 1
-    tabuleiro[3][2] = 1
-    tabuleiro[4][2] = 1
-    tabuleiro[5][2] = 1
-    tabuleiro[7][6] = 1
-    tabuleiro[8][6] = 1
+function posicionarNavios(numNavios) {
+    let naviosPosicionados = 0;
+    while (naviosPosicionados < numNavios) {
+        let linha = Math.floor(Math.random() * 10);
+        let coluna = Math.floor(Math.random() * 10);
+        
+        if (tabuleiro[linha][coluna] === 0) {
+            tabuleiro[linha][coluna] = 1; 
+            naviosPosicionados++;
+        }
+    }
 }
 
-let soma = 0
-for(let 1=0; i<tabuleiro.length; i++){
-    for(let j=0; j<tabuleiro[i].length;j++)
-        quantidadeDeNavios+=tabuleiro[i][j]
+function exibirTabuleiro() {
+    console.log("Tabuleiro:");
+    tabuleiro.forEach(linha => {
+        console.log(linha.map(celula => {
+            if (celula === 0) return "~"; 
+            if (celula === 1) return "N"; 
+            if (celula === 2) return "X"; 
+            if (celula === 3) return "O"; 
+        }).join(" "));
+    });
 }
-let escolhaLinha = Number(prompt("escolha a linha que deseja atacar!"))
-let escolhaColuna = Number(prompt("escolha a coluna que deseja atacar!"))
 
-function verificarPosicao(linha, coluna){
-           if (tabuleiro[linha][coluna] === 1){
-            console.log('acertou')
-           }
-           else if ()
-            
+
+function atacar(linha, coluna) {
+    if (tabuleiro[linha][coluna] === 1) {
+        tabuleiro[linha][coluna] = 2; 
+        alert("Acertou um navio!");
+        return true; 
+    } else if (tabuleiro[linha][coluna] === 0) {
+        tabuleiro[linha][coluna] = 3; 
+        alert("Água!");
+        return false;
+    } else {
+        alert("Você já atacou essa posição!");
+        return null; 
+    }
 }
+
+
+function contarNaviosRestantes() {
+    return tabuleiro.flat().filter(celula => celula === 1).length;
+}
+
+
+function jogar() {
+    const numNavios = 20; 
+    posicionarNavios(numNavios);
+    let naviosRestantes = numNavios;
+
+    while (naviosRestantes > 0) {
+        exibirTabuleiro();
+
+        let linha = Number(prompt("Digite a linha (0-9):"));
+        let coluna = Number(prompt("Digite a coluna (0-9):"));
+
+        
+        if (isNaN(linha) || isNaN(coluna) || linha < 0 || linha > 9 || coluna < 0 || coluna > 9) {
+            alert("Entrada inválida! Tente novamente.");
+            continue;
+        }
+
+        const resultado = atacar(linha, coluna);
+        
+        if (resultado === true) {
+            naviosRestantes = contarNaviosRestantes();
+            alert(`Navios restantes: ${naviosRestantes}`);
+        }
+    }
+   alert("Você afundou todos os navios! Parabéns!");
+}
+
+
+jogar();
