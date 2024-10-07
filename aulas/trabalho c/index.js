@@ -67,11 +67,18 @@ function coletarPersonagens() {
         return false; // Retorna false se a coleta falhar
     }
     for (let i = 0; i < numPersonagens; i++) {
-        const nome = prompt(`Escolha um nome para o personagem ${i + 1}:\n${nomesPersonagens.join(', ')}`);
+        let nome;
+        while (true) {
+            nome = prompt(`Escolha um nome para o personagem ${i + 1}:\n${nomesPersonagens.join(', ')}`);
+            if (nomesPersonagens.includes(nome)) {
+                break; // Sai do loop se o nome for válido
+            }
+            console.log(`Erro: O nome "${nome}" não é válido. Tente novamente.`);
+        }
         const vida = Number(prompt(`Vida do personagem ${i + 1} (1 a 20):`));
         const ataque = Number(prompt(`Ataque do personagem ${i + 1} (0 ou maior):`));
         const defesa = Number(prompt(`Defesa do personagem ${i + 1} (0 ou maior):`));
-        if (vida <= 0 || ataque < 0 || defesa < 0) {
+        if (vida < 1 || vida > 20 || ataque < 0 || defesa < 0) {
             console.log(`Erro: Valores inválidos para o personagem ${nome}.`);
             return false; // Retorna false se a coleta falhar
         }
@@ -130,6 +137,7 @@ if (personagensColetados && armasColetadas && itensColetados) {
 } else {
     console.log("Erro: Dados não validados devido a entradas inválidas.");
 }
+
 
 
 //Olhamos alguns video pra dar uma ajudinha a ser mais facil, como usar o codigo join.
