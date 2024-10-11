@@ -147,16 +147,16 @@ if (personagensColetados && armasColetadas && itensColetados) {
 /*
 const jogo = {
     personagens: [
-        { nome: "Link", vida: 15, ataque: 10, defesa: 8 },
+        { nome: "Link", vida: 15, ataque: 10, defesa: 8.5 },
         { nome: "Zelda", vida: 12, ataque: 8, defesa: 10 },
         { nome: "Ganon", vida: 20, ataque: 15, defesa: 12 },
-        { nome: "Impa", vida: 5, ataque: 6, defesa: 7 }
+        { nome: "Impa", vida: 1000, ataque: 6, defesa: 7 }
     ],
     armas: [
         { tipo: "Espada", dano: 10, alcance: 1 },
         { tipo: "Arco", dano: 8, alcance: 10 },
         { tipo: "Bumerangue", dano: 5, alcance: 3 },
-        { tipo: "Clava", dano: 0, alcance: 1 }
+        { tipo: -1, dano: -1, alcance: 1 }
     ],
     itens: [
         { nome: "Bomba", efeito: "Explodir inimigos" },
@@ -222,4 +222,5 @@ function validarJogo(jogo) {
 
 // Validar os dados do objeto
 validarJogo(jogo);
+
 */
